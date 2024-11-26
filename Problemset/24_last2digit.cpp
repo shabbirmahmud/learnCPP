@@ -1,19 +1,16 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main()
 {
-
-    int A, B, C, D, result;
+    long long A, B, C, D;
     cin >> A >> B >> C >> D;
-    result = A * B * C * D;
-    result = result % 100;
-    if (result == 0)
+    if (2 <= A && 2 <= B && 2 <= C && 2 <= D
+    && A <= 1E9 && B <= 1E9 && C <= 1E9 && D <= 1E9)
     {
-        cout << "00" << endl;
+        long long result = ((A % 100) * (B % 100) % 100 * (C % 100) % 100 * (D % 100) % 100) % 100;
+        cout << setw(2) << setfill('0') << result << endl;
     }
-    else
-    {
-        cout << result << endl;
-    }
+    return 0;
 }
